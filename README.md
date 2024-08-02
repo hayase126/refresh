@@ -53,4 +53,4 @@ SNSや現在飲み屋などで働いている人への紹介。
 | 開発環境 | Docker |  
 
 ### 画面遷移図  
-https://www.figma.com/board/QM2YSLRwftLayJ6cLxICrE/refresh?node-id=0-1&t=O8S3l9jZig2CXse3-0
+https://www.figma.com/design/SFOwwzzSa0G3cXP6joo641/refresh?node-id=0-1&t=J4TL38WzawVthMkT-0
