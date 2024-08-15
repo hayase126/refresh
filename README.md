@@ -1,56 +1,24 @@
-# りふれっ酒
+# README
 
-## サービス概要
-二日酔いに関するお助けアプリ。  
-楽しくお酒を飲むためにも知っておきたい情報や知識を共有し合う。
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-## このサービスへの思い・作りたい理由
-楽しく飲んでいる時に次の日の二日酔いが頭をよぎる…二日酔いで1日のスタートが最悪になるのは避けたい…  
-そんな時飲む前や飲んでる最中、飲み終わりや朝起きたときにできる二日酔い対策を知っているかどうかでいつも以上に楽しくお酒を飲めるはずです。
+Things you may want to cover:
 
-現にお酒を飲むお仕事をしており、二日酔いで学習が捗らない、起きれない、起きても気持ち悪い、などさまざまな悩みがあります。  
-そこで二日酔いの対策や二日酔いの時に何をするべきなのかを共有しより良い対策をできると良いなと思いました。
+* Ruby version
 
-## ユーザー層について
-・お酒を飲むのが好きな人。  
-・二日酔いで苦しんだことのある人。  
-・二日酔いになりやすい人。  
+* System dependencies
 
-## サービスの利用イメージ
-飲む前や飲んでる最中、朝起きて気持ち悪い時にすぐ見れるようにスマホで簡単に見れるよう他のユーザーの投稿一覧やいいねした投稿などはログイン無しでもみれるようにしたい。  
+* Configuration
 
-## ユーザーの獲得について
-SNSや現在飲み屋などで働いている人への紹介。  
+* Database creation
 
-## サービスの差別化ポイント・推しポイント
-医学の進歩で二日酔いに効く薬や飲み物が色々ある中、投稿機能をつけることで色々な人の最近の実体験をもとに情報を得られのでもし他の人の投稿内容を試してみて効果が実感できなくても新しい情報を入手しやすい。  
+* Database initialization
 
-## 機能候補  
-(MVPリリース)  
-ユーザー登録  
-ログイン機能  
-ログアウト機能  
-新規投稿  
-投稿一覧  
-投稿詳細  
-投稿編集  
-投稿消去  
-コメント機能  
-いいね機能  
-画像加工・合成（MiniMagick）  
-（本リリース）  
-マルチ検索・オートコンプリート  
-(タグをつけて検索できるようにしたい)
+* How to run the test suite
 
-## 機能の実装方針予定  
-| カテゴリー | 使用技術 |
-----|---- 
-| バックエンド | Ruby3系、Rails7系 |  
-| フロントエンド | Ruby3系、Rails7系 |  
-| CSSフレームワーク | Tailwind / daisyUI |  
-| データベース | PostgreSQL |  
-| インフラ | render・AWS S3 |  
-| 開発環境 | Docker |  
+* Services (job queues, cache servers, search engines, etc.)
 
-### 画面遷移図  
-https://www.figma.com/design/SFOwwzzSa0G3cXP6joo641/refresh?node-id=0-1&t=J4TL38WzawVthMkT-0
+* Deployment instructions
+
+* ...
