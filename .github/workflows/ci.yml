@@ -83,7 +83,7 @@ jobs:
   #         name: screenshots
   #         path: ${{ github.workspace }}/tmp/screenshots
   #         if-no-files-found: ignore
-    rubocop:
+  rubocop:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
