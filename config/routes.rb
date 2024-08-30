@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   root "static_pages#top"
   # user
   resources :users, only: %i[new create]
+  # post
+  resources :posts, only: %i[index]
   # login
   get "login" => "user_sessions#new", :as => :login
   post "login" => "user_sessions#create"
