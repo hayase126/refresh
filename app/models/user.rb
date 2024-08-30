@@ -7,4 +7,6 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true, presence: true, length: { maximum: 255 } # 255文字以内
   validates :name, presence: true, length: { maximum: 255 } # name要素を入力必須、255文字以内
+
+  has_many :posts
 end
