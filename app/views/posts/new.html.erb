@@ -1,0 +1,20 @@
+<div class='container flex-grow'>
+  <div class='text-center mt-6'>
+    <h1 class='text-2xl font-semi-bold'>新規投稿</h1>
+  </div>
+  <%= form_with model: @post do |f| %>
+
+    <%= f.label :titlet, 'タイトル', class: 'label w-full md:w-1/2 mx-auto' %>
+    <%= f.text_field :title, class: 'input input-borderd input-accent form-control mb-6 w-full md:w-1/2 mx-auto', placeholder: '今のお気持ちを...' %>
+    <%= f.label :content, '本文', class: 'label w-full md:w-1/2 mx-auto' %>
+    <%= f.text_area :content, class: 'input input-borderd input-accent form-control mb-6 w-full md:w-1/2 mx-auto h-auto', rows: 5, placeholder: 'おすすめの対処法をみんなに教えよう！' %>
+
+    <%= f.label :post_image, '写真', class: "label w-full md:w-1/2 mx-auto" %>
+    <%= f.file_field :post_image, class: 'file-input file-input-borderd file-input-accent form-control mb-6 w-full md:w-1/2 mx-auto', id: "input" %>
+    <%= f.hidden_field :post_image_cache %>
+
+    <div class='mx-auto md:w-1/2'>
+      <%= f.submit '投稿', class: 'btn btn-primary w-full my-6' %>
+    </div>
+  <% end %>
+</div>
