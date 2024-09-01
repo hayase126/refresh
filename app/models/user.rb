@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
+  mount_uploader :profile_image, ProfileImageUploader
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] } # 3文字以上必要
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] } # passwordの値と一致する
