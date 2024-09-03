@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  skip_before_action :require_login, only: %i[index]
+  skip_before_action :require_login, only: %i[index show]
 
   def index
     @posts = Post.includes(:user).order(created_at: :desc)
@@ -17,6 +17,10 @@ class PostsController < ApplicationController
       flash.now[:alert] = "投稿に失敗しました"
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
   private
