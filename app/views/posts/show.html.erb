@@ -1,0 +1,46 @@
+<div class="w-5/6 mx-auto my-28 max-w-screen-xl">
+  <div class="card w-full shadow-xl mx-auto mb-8 max-w-sm md:max-w-4xl">
+    <div class="md:flex justify-evenly">
+      <div class="md:mb-8 md:max-w-sm">
+        <div class="flex justify-between">
+          <div class="flex justify-start">
+            <div class="avatar m-4">
+              <div class="w-12 rounded-full">
+                <%= image_tag @post.user.profile_image.url %>
+              </div>
+            </div>
+            <div class="my-auto">
+              <%= @post.user.name %>
+            </div>
+          </div>
+          <div class="flex justify-end m-4">
+            <% if logged_in? && current_user.own?(@post) %>
+            <% end %>
+          </div>
+        </div>
+        <div class="my-7">
+          <div class="flex justify-center">
+            <% if @post.post_image.present? %>
+              <div class="carousel">
+                <div id="slide1" class="carousel-item relative w-full justify-center items-center">
+                  <%= image_tag @post.post_image.to_s, class: "rounded-lg", width: 500 %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="m-4 py-2 border-dotted border-y-2 border-info">
+          <p><%= simple_format(@post.content) %></p>
+        </div>
+      </div>
+
+      <% if logged_in? %>
+        <% if current_user.own?(@post) %>
+          <div class='absolute bottom-4 right-4'> <!-- 'absolute', 'bottom-4', 'right-4' を追加 -->
+            <%= link_to '削除', post_path(@post), data: { turbo_method: :delete, turbo_confirm: '投稿を削除しますか？' }, class: "btn btn-secondary px-4 py-2" %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

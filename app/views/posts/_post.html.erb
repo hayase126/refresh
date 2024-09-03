@@ -7,7 +7,7 @@
       </div>
       <div class="my-auto">
         <%= post.user.name %><br>
-        <%= link_to post.title, "#", class: "font-black md:text-base text-base" %>
+        <%= link_to post.title, post_path(post), class: "font-black md:text-base text-base" %>
       </div>
     </div>
     <div class="mx-4">

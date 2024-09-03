@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # user
   resources :users, only: %i[new create]
   # post
-  resources :posts, only: %i[index new create]
+  resources :posts, only: %i[index new create show]
   # login
   get "login" => "user_sessions#new", :as => :login
   post "login" => "user_sessions#create"
