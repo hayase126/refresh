@@ -409,7 +409,7 @@ DEPENDENCIES
   cssbundling-rails
   debug
   dotenv-rails
-  fog-aws (= 3.24.0)
+  fog-aws
   jbuilder
   jsbundling-rails
   mini_magick

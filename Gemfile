@@ -42,7 +42,7 @@ gem "bootsnap", require: false
 gem "sorcery"
 # carrierwave(画像)
 gem "carrierwave"
-gem "fog-aws", "3.24.0"
+gem "fog-aws"
 gem "aws-sdk-s3", require: false
 gem "dotenv-rails"
 gem "mini_magick"
