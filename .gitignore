@@ -41,3 +41,5 @@ public/uploads/*
 !/app/assets/builds/.keep
 
 /node_modules
+
+/public/uploads
