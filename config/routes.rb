@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   # user
   resources :users, only: %i[new create]
   # post
-  resources :posts
+  resources :posts do
+    resources :comments, only: %i[create destroy], shallow: true
+  end
   # login
   get "login" => "user_sessions#new", :as => :login
   post "login" => "user_sessions#create"

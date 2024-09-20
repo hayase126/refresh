@@ -32,15 +32,25 @@
         <div class="m-4 py-2 border-dotted border-y-2 border-info">
           <p><%= simple_format(@post.content) %></p>
         </div>
-      </div>
-
-      <% if logged_in? %>
-        <% if current_user.own?(@post) %>
-          <div class='absolute bottom-4 right-4'> <!-- 'absolute', 'bottom-4', 'right-4' を追加 -->
-            <%= link_to '削除', post_path(@post), data: { turbo_method: :delete, turbo_confirm: '投稿を削除しますか？' }, class: "btn btn-secondary px-4 py-2" %>
+        <div class="flex justify-between">
+          <div class="my-auto">
+            <div class="m-4 text-xs">
+              <%= l @post.created_at, format: :long %>
+            </div>
           </div>
-        <% end %>
-      <% end %>
+          <% if logged_in? %>
+            <% if current_user.own?(@post) %>
+              <div class="m-4">
+                <%= link_to '削除', post_path(@post), data: { turbo_method: :delete, turbo_confirm: '投稿を削除しますか？' }, class: "btn btn-secondary px-4 py-2" %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <%= render 'comments/form', { post: @post, comment: @comment } %>
+      <div class="mt-6">
+        <%= render partial: 'comments/comment', collection: @post.comments %>
+      </div>
     </div>
   </div>
 </div>
