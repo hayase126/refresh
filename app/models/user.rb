@@ -10,8 +10,9 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 255 } # name要素を入力必須、255文字以内
 
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   def own?(object)
-    object.user_id == id
+    id == object&.user_id
   end
 end
