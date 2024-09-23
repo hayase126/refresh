@@ -1,4 +1,4 @@
-<%= form_with model: comment, url: [ post, comment ], local: true do |f| %>
+<%= form_with model: comment, url: [ post, comment ], local: false do |f| %>
   <div class="m-4 flex justify-between items-end" id="comment-form">
     <div class="w-full mr-4">
       <%= f.text_area :body, class: "textarea textarea-bordered textarea-neutral w-full", placeholder: 'コメント' %>
