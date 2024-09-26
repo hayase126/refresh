@@ -45,9 +45,7 @@
       </div>
       <div class="md:max-w-sm md:mt-16 mb-8">
         <%= render 'comments/form', { post: @post, comment: @comment } %>
-        <div class="mt-6">
-          <%= render partial: 'comments/comment', collection: @post.comments %>
-        </div>
+        <%= render partial: 'comments/comment', collection: @post.comments %>
       </div>
     </div>
   </div>
