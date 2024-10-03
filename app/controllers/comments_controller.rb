@@ -1,11 +1,7 @@
 class CommentsController < ApplicationController
   def create
-    comment = current_user.comments.build(comment_params)
-    if comment.save
-      redirect_to post_path(comment.post), success: "コメントが投稿されました。"
-    else
-      redirect_to post_path(comment.post), danger: "コメントの投稿に失敗しました。"
-    end
+    @comment = current_user.comments.build(comment_params)
+    @comment.save
   end
 
   def destroy

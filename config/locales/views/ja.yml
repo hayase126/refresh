@@ -7,9 +7,7 @@ ja:
       login: ログイン
       edit: 編集
     label:
-      nickname: ニックネーム
-      prefecture_id: 都道府県
-      age_group: 年代
+      name: ユーザーネーム
       email: メールアドレス
       password: パスワード
       password_confirmation: パスワード（確認用）

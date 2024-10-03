@@ -1,11 +1,13 @@
-<%= form_with model: comment, url: [ post, comment ], local: true do |f| %>
-  <div class="m-4 flex justify-between items-end" id="comment-form">
+<%= form_with model: [post, comment], url: [post, comment], local: false, id: "comment-form" do |f| %>
+  <div class="m-4 flex justify-between items-end">
     <div class="w-full mr-4">
       <%= f.text_area :body, class: "textarea textarea-bordered textarea-neutral w-full", placeholder: 'コメント' %>
     </div>
     <div>
       <%= button_tag type: "submit" do %>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+        </svg>
       <% end %>
     </div>
   </div>

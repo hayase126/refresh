@@ -13,10 +13,6 @@
               <%= @post.user.name %>
             </div>
           </div>
-          <div class="flex justify-end m-4">
-            <% if logged_in? && current_user.own?(@post) %>
-            <% end %>
-          </div>
         </div>
         <div class="my-7">
           <div class="flex justify-center">
@@ -47,9 +43,11 @@
           <% end %>
         </div>
       </div>
-      <%= render 'comments/form', { post: @post, comment: @comment } %>
-      <div class="mt-6">
-        <%= render partial: 'comments/comment', collection: @post.comments %>
+      <div class="md:max-w-sm md:mt-16 mb-8">
+        <%= render 'comments/form', { post: @post, comment: @comment } %>
+        <div id="table-comment">
+          <%= render partial: 'comments/comment', collection: @post.comments %>
+        </div>
       </div>
     </div>
   </div>
