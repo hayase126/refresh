@@ -16,7 +16,12 @@ Rails.application.routes.draw do
   # post
   resources :posts do
     resources :comments, only: %i[create destroy], shallow: true
+    collection do
+      get :likes
+    end
   end
+  # like
+  resources :likes, only: %i[create destroy]
   # login
   get "login" => "user_sessions#new", :as => :login
   post "login" => "user_sessions#create"

@@ -41,6 +41,11 @@
               </div>
             <% end %>
           <% end %>
+          <div class="my-auto mr-4">
+            <% if logged_in? %>
+              <%= render 'like_buttons', { post: @post } %>
+            <% end %>
+          </div>
         </div>
       </div>
       <div class="md:max-w-sm md:mt-16 mb-8">

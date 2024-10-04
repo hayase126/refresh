@@ -1,0 +1,17 @@
+<div class="w-5/6 mx-auto my-28 max-w-screen-xl">
+  <div class="mb-10">
+  	<%= render 'shared/search_form' %>
+  </div>
+
+  <!-- 掲示板一覧 --!>
+  <div class="flex justify-center md:flex flex-wrap">
+	<% if @like_posts.present? %>
+  	  <%= render @like_posts %>
+	<% else %>
+  	  <p>投稿がありません</p>
+  	<% end %>
+  </div>
+  <div>
+	<%= paginate @like_posts %>
+  </div>
+</div>

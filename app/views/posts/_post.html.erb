@@ -23,6 +23,11 @@
       <div class="m-4">
         <%= post.created_at.strftime("%Y/%m/%d %H:%M") %>
       </div>
+      <% if logged_in? %>
+        <div class="m-4">
+          <%= render 'posts/like_buttons', { post: post } %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

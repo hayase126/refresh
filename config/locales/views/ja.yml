@@ -27,3 +27,13 @@ ja:
       not_updated: "%{item}を更新できませんでした"
       deleted: "%{item}を削除しました"
       delete_confirm: "%{item}を削除しますか？"
+    post:
+      likes:
+        title: いいね一覧
+        no_result: いいねはありません
+    likes:
+      create:
+        success: いいねしました
+      destroy:
+        success: 解除しました
+      
