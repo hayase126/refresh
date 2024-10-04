@@ -1,0 +1,49 @@
+<div class="w-5/6 mx-auto max-w-screen-xl flex-grow mb-10">
+  <div class="mt-10 mb-5">
+    <h1 class="text-4xl md:text-5xl font-semi-bold mb-10 pb-4 text-center">
+      <%= t('.title') %>
+    </h1>
+
+    <!-- プロフィール情報テーブル -->
+    <div class="w-full md:w-2/3 mx-auto">
+
+      <!-- プロフィール編集ボタン（テーブルの上部、左寄せ） -->
+      <div class="w-full flex justify-start mb-4">
+        <%= link_to "編集", edit_profile_path, class: "btn btn-primary" %>
+      </div>
+
+      <table class="table-auto w-full text-left mb-6">
+        <tbody>
+          <!-- ユーザーネーム -->
+          <tr class="border-b">
+            <th class="py-2 px-4 font-semibold"><%= User.human_attribute_name(:name) %></th>
+            <td class="py-2 px-4"><%= current_user.name %></td>
+          </tr>
+
+          <!-- メールアドレス -->
+          <tr class="border-b">
+            <th class="py-2 px-4 font-semibold"><%= User.human_attribute_name(:email) %></th>
+            <td class="py-2 px-4"><%= current_user.email %></td>
+          </tr>
+
+          <!-- プロフィール画像 -->
+          <tr class="border-b">
+            <th class="py-2 px-4 font-semibold"><%= User.human_attribute_name(:profile_image) %></th>
+            <% if current_user.profile_image.present? %>
+              <td class="py-2 px-4">
+                <%= image_tag current_user.profile_image_url, class: "rounded-full", size: '50x50' %>
+              </td>
+            <% else %>
+              <td class="py-2 px-4">なし</td>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- ログアウトボタン（テーブルの下部、中央寄せ） -->
+      <div class="w-full flex justify-center mt-6">
+        <%= link_to "ログアウト", logout_path, data: { turbo_method: :delete }, class: "btn btn-secondary" %>
+      </div>
+    </div>
+  </div>
+</div>

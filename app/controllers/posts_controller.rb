@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   def destroy
     @post = current_user.posts.find(params[:id])
     @post.destroy!
-    redirect_to posts_path, success: "投稿を削除しました"
+    redirect_to posts_path, success: t("defaults.message.deleted", item: Post.model_name.human)
   end
 
   def likes

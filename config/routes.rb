@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   root "static_pages#top"
   # user
   resources :users, only: %i[new create]
+  resource :profile, only: %i[show edit update]
   # post
   resources :posts do
     resources :comments, only: %i[create destroy], shallow: true

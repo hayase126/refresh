@@ -1,25 +1,25 @@
 <div class="card w-full m-auto shadow-xl max-w-xs hover:bg-base-200">
-    <div class="flex justify-start">
-      <div class="avatar m-4">
-        <div class="w-12 rounded-full">
-          <%= image_tag post.user.profile_image.url %>
-        </div>
-      </div>
-      <div class="my-auto">
-        <%= post.user.name %><br>
-        <%= link_to post.title, post_path(post), class: "font-black md:text-base text-base" %>
+  <div class="flex justify-start">
+    <div class="avatar m-4">
+      <div class="w-12 rounded-full">
+        <%= image_tag post.user.profile_image.url %>
       </div>
     </div>
-    <div class="mx-4">
-      <% if post.post_image.present? %>
-        <%= image_tag post.post_image_url, class: "rounded-xl w-72 h-72 object-cover" %>
-      <% else %>
-       <!-- デフォルト画像やプレースホルダーを表示することもできます -->
-        <%= image_tag 'refresh.jpg', class: "rounded-xl w-72 h-72 object-cover" %>
-      <% end %>
-    </div>
-  <div class="flex justify-between">
     <div class="my-auto">
+      <%= post.user.name %><br>
+      <%= link_to post.title, post_path(post), class: "font-black md:text-base text-base" %>
+    </div>
+  </div>
+  <div class="mx-4">
+    <% if post.post_image.present? %>
+      <%= image_tag post.post_image_url, class: "rounded-xl w-72 h-72 object-cover" %>
+    <% else %>
+     <!-- デフォルト画像やプレースホルダーを表示することもできます -->
+      <%= image_tag 'refresh.jpg', class: "rounded-xl w-72 h-72 object-cover" %>
+    <% end %>
+  </div>
+  <div class="flex justify-between items-center">
+    <div class="flex items-center">
       <div class="m-4">
         <%= post.created_at.strftime("%Y/%m/%d %H:%M") %>
       </div>

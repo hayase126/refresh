@@ -2,6 +2,34 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      post: 投稿
+      comment: コメント
+      like: いいね
     attributes:
       user:
-        name: 名前
+        id: ID
+        name: ユーザーネーム
+        email: メールアドレス
+        profile_image: 画像
+        password: パスワード
+        password_confirmation: パスワード（確認用）
+        crypted_password: パスワード（暗号化）
+        role: 役割
+        created_at: 登録日
+        updated_at: 更新日
+        agreement: 確認事項
+      post:
+        id: ID
+        content: 内容
+        post_image: 画像
+        created_at: 作成日
+        updated_at: 更新日
+      comment:
+        id: ID
+        body: コメント
+        created_at: 作成日
+        updated_at: 更新日
+      like:
+        id: ID
+        created_at: 作成日
+        updated_at: 更新日

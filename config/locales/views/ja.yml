@@ -27,13 +27,25 @@ ja:
       not_updated: "%{item}を更新できませんでした"
       deleted: "%{item}を削除しました"
       delete_confirm: "%{item}を削除しますか？"
-    post:
-      likes:
-        title: いいね一覧
-        no_result: いいねはありません
+  views:
+    pagination:
+      first: "<<"
+      last: ">>"
+      previous: "<"
+      next: ">"
+      truncate: "•••"
+  post:
     likes:
-      create:
-        success: いいねしました
-      destroy:
-        success: 解除しました
+      title: いいね一覧
+      no_result: いいねはありません
+  likes:
+    create:
+      success: いいねしました
+    destroy:
+      success: 解除しました
+  profiles:
+    show:
+      title: マイページ
+    edit:
+      title: マイページ編集
       
