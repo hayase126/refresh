@@ -1,0 +1,64 @@
+<%= content_for(:title, t('.title')) %>
+<div class="w-5/6 mx-auto max-w-screen-xl flex-grow mb-10">
+  <div class="mt-10 mb-5">
+    <h1 class="text-4xl md:text-5xl font-semi-bold mb-10 pb-4 text-center">
+      <%= t('.title') %>
+    </h1>
+
+    <!-- プロフィール情報テーブル -->
+    <div class="w-full md:w-2/3 mx-auto">
+
+      <!-- プロフィール編集ボタン（テーブルの上部、左寄せ） -->
+      <div class="w-full flex justify-start mb-4">
+        <%= link_to "編集", edit_profile_path, class: "btn btn-primary" %>
+      </div>
+
+      <table class="table-auto w-full text-left mb-6">
+        <tbody>
+          <!-- ユーザーネーム -->
+          <tr class="border-b">
+            <th class="py-2 px-4 font-semibold"><%= User.human_attribute_name(:name) %></th>
+            <td class="py-2 px-4"><%= current_user.name %></td>
+          </tr>
+
+          <!-- メールアドレス -->
+          <tr class="border-b">
+            <th class="py-2 px-4 font-semibold"><%= User.human_attribute_name(:email) %></th>
+            <td class="py-2 px-4"><%= current_user.email %></td>
+          </tr>
+
+          <!-- プロフィール画像 -->
+          <tr class="border-b">
+            <th class="py-2 px-4 font-semibold"><%= User.human_attribute_name(:profile_image) %></th>
+            <% if current_user.profile_image.present? %>
+              <td class="py-2 px-4">
+                <%= image_tag current_user.profile_image_url, class: "rounded-full", size: '50x50' %>
+              </td>
+            <% else %>
+              <td class="py-2 px-4">なし</td>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- いいねした投稿の表示 -->
+  <div class="mt-10">
+    <h2 class="text-3xl font-bold mb-6 text-center">いいねした投稿</h2>
+
+    <% if @like_posts.any? %>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <% @like_posts.each do |post| %>
+          <div class="border rounded-md p-4 shadow-md">
+            <h3 class="text-xl font-semibold mb-2"><%= link_to post.title, post_path(post) %></h3>
+            <p class="text-gray-700 mb-4"><%= truncate(post.content, length: 100) %></p>
+            <p class="text-sm text-gray-500">投稿者: <%= post.user.name %></p>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p class="text-center">まだいいねした投稿はありません。</p>
+    <% end %>
+  </div>
+    </div>
+  </div>
+</div>

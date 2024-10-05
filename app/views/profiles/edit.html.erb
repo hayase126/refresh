@@ -1,0 +1,35 @@
+<% content_for(:title, t('.title')) %>
+<div class="w-5/6 mx-auto max-w-screen-xl flex-grow mb-10">
+  <div class="mt-10 mb-5">
+    <h1 class="text-4xl md:text-5xl font-semi-bold mb-10 pb-4 text-center">
+      <%= t('.title') %>
+    </h1>
+
+    <%= form_with model: @user, url: profile_path, local: true do |f| %>
+      <!-- ユーザーネーム入力欄 -->
+      <%= f.label :name, 'ユーザーネーム', class: "label mb-2 w-full md:w-1/2 mx-auto" %>
+      <%= f.text_field :name, class: "input input-bordered form-control mb-5 w-full md:w-1/2 mx-auto" %>
+
+      <!-- メールアドレス入力欄 -->
+      <%= f.label :email, 'メールアドレス', class: "label mb-2 w-full md:w-1/2 mx-auto" %>
+      <%= f.email_field :email, class: "input input-bordered form-control mb-5 w-full md:w-1/2 mx-auto" %>
+
+      <!-- プロフィール画像入力欄 -->
+      <%= f.label :profile_image, 'プロフィール画像', class: "label mb-2 w-full md:w-1/2 mx-auto" %>
+      <%= f.file_field :profile_image, accept: 'image/*', class: "file-input file-input-bordered form-control mb-5 w-full md:w-1/2 mx-auto" %>
+      <%= f.hidden_field :profile_image_cache %>
+
+      <!-- 画像プレビュー -->
+      <% if @user.profile_image.present? %>
+        <div class="w-full md:w-1/2 mx-auto text-center">
+          <%= image_tag @user.profile_image.url, class: "rounded-full w-24 h-24 mx-auto mb-4" %>
+        </div>
+      <% end %>
+
+      <!-- 更新ボタン -->
+      <div class="w-1/2 mx-auto flex justify-center text-center">
+        <%= f.submit "更新", class: "btn mt-1" %>
+      </div>
+    <% end %>
+  </div>
+</div>
