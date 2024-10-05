@@ -34,10 +34,19 @@ ja:
       previous: "<"
       next: ">"
       truncate: "•••"
-  post:
-    likes:
-      title: いいね一覧
-      no_result: いいねはありません
+  users:
+    new:
+      title: ユーザー登録
+  user_sessions:
+    new:
+      title: ログイン
+      login: ログイン
+      to_register_page: 新規登録
+    create:
+      success: ログインしました
+      failure: ログインに失敗しました
+    destroy:
+      success: ログアウトしました
   likes:
     create:
       success: いいねしました
@@ -48,4 +57,11 @@ ja:
       title: マイページ
     edit:
       title: マイページ編集
+  posts:
+    index:
+      title: 投稿一覧
+    new:
+      title: 新規投稿
+    show:
+      title: 投稿詳細
       

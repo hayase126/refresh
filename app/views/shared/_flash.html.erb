@@ -1,7 +1,6 @@
-<div class="w-5/6 mx-auto max-w-screen-xl my-3">
-  <% flash.each do |message_type, message| %>
-    <div class="alert bg-secondary">
+<div class="w-5/6 mx-auto max-w-screen-xl my-3"><% flash.each do |message_type,message|%>
+  <div class='<%= flash_background_color(message_type) %> px-4 py-2 rounded-md text-white mb-4'>
       <%= message %>
-    </div>
-  <% end %>
+  </div>
+<% end %>
 </div>

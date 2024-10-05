@@ -15,14 +15,14 @@
       <li>
         <details>
           <summary>
-            設定
+            マイページ
           </summary>
           <ul class="p-2 bg-lime-100 rounded-t-none">
             <li>
               <%= link_to 'マイページ', profile_path, class: "px-1 md:px-3" %>
             </li>
             <li>
-              <%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete } %>
+              <%= link_to 'ログアウト', logout_path, class: "px-1 md:px-3", data: { turbo_method: :delete } %>
             </li>
           </ul>
         </details>
