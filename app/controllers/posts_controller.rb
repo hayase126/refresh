@@ -15,7 +15,7 @@ class PostsController < ApplicationController
       flash[:success] = "投稿に成功しました"
       redirect_to posts_path
     else
-      flash.now[:alert] = t('defaults.message.not_created', item: Post.model_name.human)
+      flash.now[:alert] = t("defaults.message.not_created", item: Post.model_name.human)
       render :new, status: :unprocessable_entity
     end
   end
