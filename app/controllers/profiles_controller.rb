@@ -1,7 +1,10 @@
 class ProfilesController < ApplicationController
   before_action :set_user, only: %i[show edit update]
 
-  def show;  end
+  def show
+    @user = current_user
+    @like_posts = @user.like_posts.includes(:user).order(created_at: :desc)
+  end
 
   def edit; end
 
