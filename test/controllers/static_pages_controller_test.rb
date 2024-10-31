@@ -1,7 +1,7 @@
-require "test_helper"
+require 'test_helper'
 
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
+  # test 'the truth' do
   #   assert true
   # end
 end
