@@ -2,7 +2,12 @@ class PostsController < ApplicationController
   skip_before_action :require_login, only: %i[index show]
 
   def index
-    @posts = Post.includes(:user).order(created_at: :desc).page(params[:page])
+    posts = if (tag_name = params[:tag_name])
+              Post.with_tag(tag_name)
+            else
+              Post.includes(:user)
+            end
+    @posts = posts.order(created_at: :desc).page(params[:page])
   end
 
   def new
@@ -11,7 +16,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-    if @post.save
+    if @post.save_with_tags(tag_names: params.dig(:post, :tag_names).split(',').uniq)
       flash[:success] = '投稿に成功しました'
       redirect_to posts_path
     else

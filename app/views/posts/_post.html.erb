@@ -8,6 +8,9 @@
     <div class="my-auto">
       <%= post.user.name %><br>
       <%= link_to post.title, post_path(post), class: "font-black md:text-base text-base" %>
+
+      <!-- タグの表示 -->
+      <%= render post.tags %>
     </div>
   </div>
   <div class="mx-4">
