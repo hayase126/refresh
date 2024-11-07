@@ -30,4 +30,12 @@ class Post < ApplicationRecord
     # NOTE: pluckだと新規作成失敗時に値が残らない(返り値がnilになる)
     tags.map(&:name).join(',')
   end
+
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[content title]
+  end
+
+  def self.ransackable_associations(_auth_object = nil)
+    %w[user tags]
+  end
 end

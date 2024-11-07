@@ -1,5 +1,8 @@
 <% content_for(:title, t('.title')) %>
 <div class='container px-5 py24 mx-auto flex-grow'>
+  <div class="mb-10 mx-auto max-w-4xl">
+	<%= render 'search_form', q: @q %>
+  </div>
     <div class="flex flex-wrap m-4">
         <% if @posts.present? %>
             <%= render @posts %>
