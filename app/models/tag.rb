@@ -4,7 +4,7 @@ class Tag < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
 
-  def self.ransackable_attributes(auth_object = nil)
-    ["name", "created_at", "updated_at"]
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[name created_at updated_at]
   end
 end
