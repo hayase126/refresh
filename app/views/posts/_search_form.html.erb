@@ -3,7 +3,11 @@
     <div class="flex justify-between">
       <div class="w-full mr-4 md:flex justify-between">
         <div class="w-full">
-          <%= f.search_field :title_or_content_or_user_name_or_tags_name_cont, placeholder: "フリーワード検索", class: "input input-bordered input-neutral w-full" %>
+          <div data-controller="autocomplete" data-autocomplete-url-value="/posts/search" role="combobox">
+            <%= f.search_field :title_or_content_or_user_name_or_tags_name_cont, data: { autocomplete_target: 'input' }, placeholder: "検索", class: "input input-bordered input-neutral w-full" %>
+            <%= f.hidden_field :title, data: { autocomplete_target: 'hidden' } %>
+            <ul class="list-group bg-white absolute w-full md:text-sm max-w-max" data-autocomplete-target="results"></ul>
+          </div>
         </div>
         <div class="my-auto">
           <%= button_tag type: "submit" do %>
