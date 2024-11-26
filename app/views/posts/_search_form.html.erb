@@ -6,7 +6,7 @@
           <div data-controller="autocomplete" data-autocomplete-url-value="/posts/search" role="combobox">
             <%= f.search_field :title_or_content_or_user_name_or_tags_name_cont, data: { autocomplete_target: 'input' }, placeholder: "検索", class: "input input-bordered input-primary w-full" %>
             <%= f.hidden_field :title_cont, data: { autocomplete_target: 'hidden' } %>
-            <ul class="list-group bg-white border rounded-md shadow-md" data-autocomplete-target="results"></ul>
+            <ul class= "list-group bg-white border rounded-md shadow-md" data-autocomplete-target="results"></ul>
           </div>
         </div>
         <div class="my-auto">
