@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   resource :profile, only: %i[show edit update]
   # post
   resources :posts do
-    get :search, on: :collection
     resources :comments, only: %i[create destroy], shallow: true
     collection do
       get :likes

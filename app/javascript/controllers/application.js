@@ -1,5 +1,4 @@
-import { Application } from '@hotwired/stimulus'
-import { Autocomplete } from 'stimulus-autocomplete'
+import { Application } from "@hotwired/stimulus"
 
 const application = Application.start()
 
@@ -7,5 +6,4 @@ const application = Application.start()
 application.debug = false
 window.Stimulus   = application
 
-application.register('autocomplete', Autocomplete)
 export { application }

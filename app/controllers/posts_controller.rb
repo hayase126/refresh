@@ -44,11 +44,6 @@ class PostsController < ApplicationController
     @like_posts = current_user.like_posts.includes(:user).order(created_at: :desc)
   end
 
-  def search
-    @posts = Post.where('title like ?', "%#{params[:q]}%")
-    respond_to(&:js)
-  end
-
   private
 
   def post_params
