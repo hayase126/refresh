@@ -64,4 +64,6 @@ ja:
       title: 新規投稿
     show:
       title: 投稿詳細
-      
+  static_pages:
+    form:
+      title: お問い合わせフォーム
