@@ -15,5 +15,12 @@
         <%= form.submit 'ログイン', class: "btn mt-1" %>
       </div>
     <% end %>
+    <!-- Googleログイン -->
+  <div class="mt-8 text-center">
+    <p class="text-gray-500 mb-4">または、Googleアカウントでログイン</p>
+    <%= link_to auth_at_provider_path(provider: :google) do %>
+      <%= image_tag "web_neutral_rd_SU@1x.png", class: 'mx-auto' %>
+    <% end %>
+  </div>
   </div>
 </div>
