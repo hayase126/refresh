@@ -30,4 +30,8 @@ Rails.application.routes.draw do
   delete "logout" => "user_sessions#destroy", :as => :logout
   #
   get '/form', to: 'static_pages#form', as: :inquiry_form
+  # Google 認証
+  post "oauth/callback" => "oauths#callback"
+  get "oauth/callback" => "oauths#callback"
+  get "oauth/:provider" => "oauths#oauth", as: :auth_at_provider
 end
