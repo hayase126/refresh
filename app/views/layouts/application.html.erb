@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- ページタイトルを読み込む -->
     <title><%= page_title(yield(:title)) %></title>
+    <!-- モバイル端末に適したサイズで表示 -->
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- ホーム画面にアプリのように追加 -->
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- csrf対策 -->
     <%= csrf_meta_tags %>
+    <!-- CSPを設定 -->
     <%= csp_meta_tag %>
 
     <%= yield :head %>
 
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
+    <%# ファビコン %>
+    <%= favicon_link_tag image_path('favicon.png'), type: 'image/png' %>
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+
+    <%= display_meta_tags(default_meta_tags) %>
   </head>
 
   <body class="flex flex-col min-h-screen">
