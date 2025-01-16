@@ -31,8 +31,10 @@
       <%= render 'shared/before_login_header' %>
     <% end %>
     <!-- フラッシュメッセージの表示 -->
+    <div class="my-5">
     <%= render "shared/flash" %>
     <%= yield %>
+    </div>
     <!-- フッターの表示 -->
     <%= render 'shared/footer' %>
   </body>
