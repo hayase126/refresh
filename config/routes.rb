@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   # お問い合わせ
   get '/form', to: 'static_pages#form', as: :inquiry_form
   get '/policy', to: 'static_pages#policy', as: :privacy_policy
+  get '/term', to: 'static_pages#term', as: :term
   # Google 認証
   post "oauth/callback" => "oauths#callback"
   get "oauth/callback" => "oauths#callback"
